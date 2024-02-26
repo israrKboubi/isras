@@ -1,7 +1,7 @@
 
 <template>
   <Svgs></Svgs>
-  <Header></Header>
+  <Header home></Header>
   <MainContent></MainContent>
 </template>
 <script setup lang="ts">

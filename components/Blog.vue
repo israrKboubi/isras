@@ -6,28 +6,44 @@
           <h2 class="display-4 txt-fx slide-up" data-translatable="experiences-heading">Blog</h2>
           <h4 class="display-7 txt-fx slide-up" data-translatable="keyrus-title">Eplore my blog an enjoy the expeirence
           </h4>
-          <div class="data-info py-3 px-3" v-for="article in articles">
-            <NuxtLink :to="`/articles/${article.id}`">
-            <div class="article-block">
-              <div>
-                <img :src="article.banner" :alt="`${article.title} image`" />
+          <div v-if="articles">
+            <div class="data-info py-3 px-3 space-y-10" v-for="article in articles">
+                <NuxtLink :to="`/articles/${article.id}`">
+                    <div class="article-block" >  
+                      <div>
+                        <img :src="article.banner" :alt="`${article.title} image`" />
+                      </div>
+                      <div>
+                        <h3 class="info-title mt-2" data-translatable="job-role1">{{article.title}}</h3>
+                        <p class="content-blog-p" v-html="article.content">
+                        </p>
+                        <p class="meta-date">{{getFormattedDate(article.date)}}</p>
+                      </div>
+                    </div>
+                  </NuxtLink>
+                </div>
+            </div>
+            <div class="flex space-y-6 flex-col w-full" v-else >
+              <template v-for="i in 2">
+              
+              <USkeleton class="h-56 w-full bg-gray-400" :ui="{ rounded:'rounded-none', background: 'bg-gray-100 dark:bg-gray-800' }" />
+              <div class="space-y-2">
+                <USkeleton class="h-4 w-[250px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100 dark:bg-gray-800' }" />
+                <USkeleton class="h-4 w-[200px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100 dark:bg-gray-800' }"/>
+                <div class="flex w-full content-end flex-wrap"><USkeleton class="h-4 w-[100px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100 dark:bg-gray-800' }" /></div>
               </div>
-              <div>
-              <h3 class="info-title mt-2" data-translatable="job-role1">{{article.title}}</h3>
-              <p class="content-blog-p" v-html="article.content">
-              </p>
-              <p class="meta-date">{{getFormattedDate(article.date)}}</p>
+            </template>
+
             </div>
-            </div>
-            </NuxtLink>
           </div>
-        </div>
       </div>
       <Footer></Footer>
     </div>
   </main>
 </template>
 <script lang="ts" setup>
+import type { _backgroundColor } from '#tailwind-config/theme';
+
 
 defineProps<{
   articles: [] | any

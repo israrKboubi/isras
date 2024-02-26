@@ -1,4 +1,6 @@
 <template>
+       <main class="col-lg-10 offset-lg-2">
+
       <div class="container mx-1">
         <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5 mt-lg-5">
         <div class="col-lg-7 pb-5">
@@ -21,6 +23,7 @@
       </div>
       </div>
       <Footer></Footer>
+      </main>
 </template>
 <script lang="ts" setup>
 

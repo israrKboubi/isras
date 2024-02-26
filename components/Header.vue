@@ -11,12 +11,14 @@
 
           <nav id="one-page-menu" class="vertical-menu my-5">
             <ul class="menu-list list-unstyled">
-              <li><a href="#home" class="nav-link" data-translatable="home">Home</a></li>
+              <li><NuxtLink to="/"><a href="#" class="nav-link">Home</a></NuxtLink></li>
+              <template v-if="home">
               <li><a href="#about" class="nav-link" data-translatable="about">About</a></li>
               <li><a href="#experience" class="nav-link" data-translatable="experience">Experience</a></li>
               <li><a href="#portfolio" class="nav-link" data-translatable="works">Works</a></li>
               <li><a href="#contact" class="nav-link" data-translatable="contact">Contact</a></li>
-              <li><a href="/blog" class="nav-link" data-translatable="contact">Blog</a></li>
+            </template>
+              <li><NuxtLink to="/blog"><a href="#" class="nav-link" data-translatable="contact">Blog</a></NuxtLink></li>
             </ul>
           </nav>
         </div>
@@ -77,3 +79,9 @@
       </div>
     </header>
   </template>
+
+  <script lang="ts" setup>
+  defineProps<{
+    home:boolean
+  }>()
+  </script>

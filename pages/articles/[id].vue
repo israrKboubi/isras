@@ -1,6 +1,6 @@
 <template>
   <Svgs></Svgs>
-  <Header></Header>
+  <Header :home="false"></Header>
   <MainContentBlog v-if="data" :article="data"></MainContentBlog>
 </template>
 <script setup lang="ts">
