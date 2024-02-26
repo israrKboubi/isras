@@ -6,30 +6,6 @@ export default defineNuxtConfig({
   routeRules: {
     '/articles/**': { isr: true },
   },
-  hooks: {
-    async 'nitro:config'(nitroConfig) {
-      nitroConfig.prerender = nitroConfig.prerender || {};
-      nitroConfig.prerender.routes = nitroConfig.prerender.routes || [];
-
-      if (nitroConfig.dev) {
-        return;
-      }
-
-      try {
-        const response = await fetch('https://dockerhub-israr-blog.onrender.com/articles/');
-          if (response.ok) {
-            const news: News[] = await response.json();
-            const routes2 = news.map((news) => `/articles/${news.id}`);
-            nitroConfig.prerender.routes.push(...routes2);
-          } else {
-            console.error('Error fetching data:', response.statusText);
-          }
-         
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    },
-  },
   css: [
     '~/assets/css/vendor.css',
   '~/assets/css/bootstrap.min.css',
@@ -47,8 +23,6 @@ app: {
       'data-bs-target':'#header-nav'
     },
   },
-},
-plugins: [
-  '~/plugins/skeleton.ts',
-]
+},  
+modules: ['@nuxt/ui']
 })
