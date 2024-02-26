@@ -12,6 +12,7 @@
   "dependencies": {
     "nuxt": "^3.10.3",
     "vue": "^3.4.19",
+    "vue-loading-skeleton": "^1.1.9",
     "vue-router": "^4.3.0"
   }
 }

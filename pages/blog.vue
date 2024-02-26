@@ -2,6 +2,7 @@
   <Svgs></Svgs>
   <Header></Header>
   <Blog v-if="articles" :articles="articles"></Blog>
+  <Skeleton v-else />
 </template>
 <script setup lang="ts">
 useHead({

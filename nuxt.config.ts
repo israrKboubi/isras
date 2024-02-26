@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   ssr: true,
   target: 'static',
   routeRules: {
-    // Homepage pre-rendered at build time
     '/articles/**': { isr: true },
   },
   hooks: {
@@ -48,5 +47,8 @@ app: {
       'data-bs-target':'#header-nav'
     },
   },
-}
+},
+plugins: [
+  '~/plugins/skeleton.ts',
+]
 })
