@@ -627,11 +627,6 @@ header {
 }
 
 @media (max-width: 992px) {
-  .switch-dark {
-    position: absolute;
-    top: 65px !important;
-    right: 39px !important
-  }
 
   .toggle {
     font-size: 2rem;

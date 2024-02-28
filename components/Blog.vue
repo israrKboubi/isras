@@ -24,13 +24,15 @@
                 </div>
             </div>
             <div class="flex space-y-6 flex-col w-full" v-else >
+              <h5 class=" txt-fx slide-up mt-5" >🌟 Hello there! 👋 Thanks for stepping into this little corner of the internet! 🌐✨ Just a heads up, our blog is powered by the magic of a free hosting ecosystem, so things might take a moment to load. 🚀✨</h5>
+
               <template v-for="i in 2">
               
-              <USkeleton class="h-56 w-full bg-gray-400" :ui="{ rounded:'rounded-none', background: 'bg-gray-100 dark:bg-gray-800' }" />
+              <USkeleton class="h-56 w-full bg-gray-400" :ui="{ rounded:'rounded-none', background: 'bg-gray-100' }" />
               <div class="space-y-2">
-                <USkeleton class="h-4 w-[250px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100 dark:bg-gray-800' }" />
-                <USkeleton class="h-4 w-[200px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100 dark:bg-gray-800' }"/>
-                <div class="flex w-full content-end flex-wrap"><USkeleton class="h-4 w-[100px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100 dark:bg-gray-800' }" /></div>
+                <USkeleton class="h-4 w-[250px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100' }" />
+                <USkeleton class="h-4 w-[200px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100' }"/>
+                <div class="flex w-full content-end flex-wrap"><USkeleton class="h-4 w-[100px]" :ui="{ rounded:'rounded-none', background: 'bg-gray-100' }" /></div>
               </div>
             </template>
 

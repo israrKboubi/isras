@@ -14,7 +14,7 @@
               </div>
               <div>
               <br>
-              <p >
+              <p v-html="article.content">
               </p>
             </div>
             </div>

@@ -1,7 +1,7 @@
 <template>
   <Svgs></Svgs>
   <Header :home="false"></Header>
-  <MainContentBlog v-if="data" :article="data"></MainContentBlog>
+  <MainContentBlog class="mt-20" v-if="data" :article="data"></MainContentBlog>
 </template>
 <script setup lang="ts">
 
@@ -32,7 +32,12 @@ useHead({
   { property: 'twitter:description', content:  data.value?.title },
   { property: 'twitter:image', content:  data.value?.banner },
   { property: 'twitter:card', content: data.value?.title }
-  ]
+  ],
+  script: [
+  {src: '/js/jquery-1.11.0.min.js',tagPosition: 'bodyClose'},
+  {src: '/js/plugins.js',tagPosition: 'bodyClose'},
+  {src: '/js/script.js',tagPosition: 'bodyClose',async: true},
+  ],
 });
 
 </script>
