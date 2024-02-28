@@ -23,12 +23,12 @@
           </nav>
         </div>
         <div class="mt-5">
-        <div class="switch-dark mb-5">
-          <input type="checkbox" class="sr-only" id="darkmode-toggle">
-          <label for="darkmode-toggle" class="toggle">
-            <span>Toggle dark mode</span>
-          </label>
-        </div>
+          <div class="switch-dark mb-5">
+              <input type="checkbox" class="sr-only" id="darkmode-toggle" ref="darkModeToggle" @change="toggleDarkMode">
+              <label for="darkmode-toggle" class="toggle">
+                <span>Toggle dark mode</span>
+              </label>
+            </div>
           <a class="lang" onclick="changeLang('en')">English</a><br>
           <a class="lang" onclick="changeLang('fr')">Français</a><br>
           <a class="lang" onclick="changeLang('ar')">العربية</a><br>
@@ -84,4 +84,98 @@
   defineProps<{
     home:boolean
   }>()
+  const darkModeToggle = ref(null);
+    const isDarkMode = ref(process.client && localStorage.getItem('darkMode') === 'true');
+    var htmlElement ; 
+    var logoElement ;
+
+    onBeforeMount(()=>{
+      htmlElement = document.body.parentNode;
+     logoElement = document.querySelector('#logo');
+    })
+
+    const enableDarkMode = () => {
+      document.querySelectorAll('.btn-dark').forEach((el) => {
+        el.classList.remove('btn-dark');
+        el.classList.add('btn-light');
+      });
+      document.querySelectorAll('#links-social li a').forEach((el) => {
+        el.classList.remove('text-dark');
+        el.classList.add('text-light');
+      });
+      document.querySelectorAll('.animated').forEach((el) => {
+        el.classList.add('bg-dark');
+      });
+      htmlElement?.setAttribute('data-bs-theme', 'dark');
+      logoElement?.setAttribute('src','/images/light-logo.webp');
+      localStorage.setItem('darkMode', 'true');
+    };
+
+    const disableDarkMode = () => {
+      document.querySelectorAll('.btn-light').forEach((el) => {
+        el.classList.remove('btn-light');
+        el.classList.add('btn-dark');
+      });
+      document.querySelectorAll('#links-social li a').forEach((el) => {
+        el.classList.remove('text-light');
+        el.classList.add('text-dark');
+      });
+      htmlElement?.setAttribute('data-bs-theme', 'light');
+      document.querySelectorAll('.animated').forEach((el) => {
+        el.classList.remove('bg-dark');
+      });
+      logoElement?.setAttribute('src','/images/main-logo.webp');
+      localStorage.setItem('darkMode', 'false');
+    };
+
+
+
+    onMounted(() => {
+      if (isDarkMode.value) {
+        enableDarkMode();
+      }
+      darkModeToggle.value = document.getElementById('darkmode-toggle');
+
+
+    var body = undefined;
+    var menu = undefined;
+    var menuItems = undefined;
+
+    var init = function init() {
+      body = document.querySelector('body');
+      menu = document.querySelector('.menu-btn');
+      menuItems = document.querySelectorAll('.nav-link');
+      applyListeners();
+    };
+
+      var applyListeners = function applyListeners() {
+        menu.addEventListener('click', function () {
+          return toggleClass(body, 'nav-active');
+        });
+
+        menuItems.forEach(element => {
+          console.log("eee")
+          element.addEventListener('click', function () {
+          return toggleClass(body, 'nav-active');
+         });
+
+        });
+      };
+
+      var toggleClass = function toggleClass(element, stringClass) {
+        if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
+      };
+
+    init();
+
+    });
+
+  const toggleDarkMode = () => {
+      isDarkMode.value = !isDarkMode.value;
+      if (isDarkMode.value) {
+        enableDarkMode();
+      } else {
+        disableDarkMode();
+      }
+    };
   </script>

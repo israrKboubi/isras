@@ -6,6 +6,11 @@
 <script setup lang="ts">
 useHead({
   title: 'My App',
+  script: [
+  {src: '/js/jquery-1.11.0.min.js',tagPosition: 'bodyClose'},
+  {src: '/js/plugins.js',tagPosition: 'bodyClose'},
+  {src: '/js/script.js',tagPosition: 'bodyClose',async: true},
+  ],
   meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },

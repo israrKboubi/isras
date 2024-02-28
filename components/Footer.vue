@@ -3,15 +3,15 @@
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-6">
-          <span class="text-muted text-uppercase" data-translatable="personal-info-title">Personal Info</span>
-          <h2 class="display-1 txt-fx slide-up" data-translatable="contact-heading">Contact Me</h2>
+          <span class="text-muted text-uppercase" >Personal Info</span>
+          <h2 class="display-1 txt-fx" >Contact Me</h2>
           <p data-translatable>Don't be shy, just send me whatever you think!.
           </p>
         </div>
       </div>
       <div class="row d-flex g-5">
         <div class="col-lg-7">
-          <h3 data-translatable="faq-heading">Frequently Asked Questions</h3>
+          <h3 >Frequently Asked Questions</h3>
           <div class="accordion" id="accordionExample2" >
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
@@ -44,9 +44,8 @@
                 </button>
               </h2>
               <div id="accordion-collapse3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample2">
-                <div data-translatable class="accordion-body">
+                <div  class="accordion-body">
                   My motivation in software development stems from the endless potential to create meaningful and impactful solutions. The ability to craft innovative software that addresses real-world challenges and improves people's lives is a driving force for me. Witnessing the positive outcomes of well-designed applications and the tangible impact they have fuels my passion.
-              
                 </div>
               </div>
             </div>
@@ -63,7 +62,7 @@
                 <div class="pb-2"><input type="text" name="name" placeholder="Your Full Name" class="form-control"></div>
                 <div class="pb-2"><input type="email" name="email" placeholder="Your Email Address" class="form-control"></div>
                 <div class="pb-2"><textarea name="message" placeholder="Your Message" rows="6" class="form-control"></textarea></div>
-                <button type="submit" name="submit" class="btn btn-dark w-100 btn-rounded" data-translatable="submit-button">Submit//Envoyer//إرسال</button>
+                <button type="submit" name="submit" class="btn btn-dark w-100 btn-rounded" data-translatable="submit-button">Submit</button>
               </form>
             </div>
           </div>

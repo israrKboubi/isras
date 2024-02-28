@@ -8,11 +8,11 @@
 useHead({
   title: 'Israr kboubi',
   script: [
-  {         src: '/js/jquery-1.11.0.min.js',tagPosition: 'bodyClose'},
-  {         src: '/js/plugins.js',tagPosition: 'bodyClose'},
-  {         src: '/js/animatedModal.min.js',tagPosition: 'bodyClose'},
-  {         src: '/js/modalSetup.js',tagPosition: 'bodyClose'},
-  {         src: '/js/script.js',tagPosition: 'bodyClose'},
+  {src: '/js/jquery-1.11.0.min.js',tagPosition: 'bodyClose'},
+  {src: '/js/plugins.js',tagPosition: 'bodyClose'},
+  {src: '/js/animatedModal.min.js',tagPosition: 'bodyClose'},
+  {src: '/js/modalSetup.js',tagPosition: 'bodyClose',async: true},
+  {src: '/js/script.js',tagPosition: 'bodyClose',async: true},
   ],
   meta: [
       { charset: 'utf-8' },
