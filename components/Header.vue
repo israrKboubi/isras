@@ -156,7 +156,11 @@
         menuItems.forEach(element => {
           console.log("eee")
           element.addEventListener('click', function () {
+<<<<<<< Updated upstream
           return toggleClass(body, 'nav-active');
+=======
+            if (body.classList.contains(stringClass)) element.classList.remove(stringClass);
+>>>>>>> Stashed changes
          });
 
         });
