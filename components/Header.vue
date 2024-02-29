@@ -154,9 +154,8 @@
         });
 
         menuItems.forEach(element => {
-          console.log("eee")
           element.addEventListener('click', function () {
-          return toggleClass(body, 'nav-active');
+            if (element.classList.contains(stringClass)) element.classList.remove(stringClass);
          });
 
         });
