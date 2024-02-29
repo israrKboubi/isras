@@ -942,10 +942,6 @@ html[lang="ar"] .txt-fx {
   }
 }
 
-body.nav-active main {
-  opacity: 0.3;
-}
-
 body:not(.nav-active) main {
   opacity: 1;
 }
