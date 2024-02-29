@@ -155,7 +155,7 @@
 
         menuItems.forEach(element => {
           element.addEventListener('click', function () {
-          if (body.classList.contains(stringClass)) element.classList.remove(stringClass);
+          if (body.classList.contains('nav-active')) element.classList.remove('nav-active');
          });
 
         });
